@@ -4,6 +4,7 @@
    Torre  -> 5 casas para a direita (usando for)
    Bispo  -> 5 casas na diagonal Cima, Direita (usando while)
    Rainha -> 8 casas para a esquerda (usando do-while)
+   Cavalo -> 2 casas para baixo e 1 para a esquerda (movimento em "L")
 */
 
 int main(void) {
@@ -34,6 +35,30 @@ int main(void) {
             printf("Esquerda\n");
             cont_rainha++;
         } while (cont_rainha < rainha_casas);
+    }
+
+    /* 
+       Cavalo (movimento em "L"):
+       - Deve ir 2 casas para baixo e 1 casa para a esquerda.
+    */
+    int cavalo_duas_baixo    = 2; /* duas casas para baixo */
+    int cavalo_uma_esquerda  = 1; /* uma casa para a esquerda */
+    int num_movimentos_L     = 1; /* quantos "L" o cavalo fará (aqui 1) */
+
+    printf("\nMovimento do Cavalo (2 Baixo, 1 Esquerda) — um 'L':\n");
+    for (int mov = 0; mov < num_movimentos_L; mov++) {
+        /* primeiro faz as duas casas para baixo */
+        int cont_baixo = 0;
+        while (cont_baixo < cavalo_duas_baixo) {
+            printf("Baixo\n");
+            cont_baixo++;
+        }
+        /* depois faz a casa para a esquerda */
+        int cont_esq = 0;
+        while (cont_esq < cavalo_uma_esquerda) {
+            printf("Esquerda\n");
+            cont_esq++;
+        }
     }
 
     return 0;
